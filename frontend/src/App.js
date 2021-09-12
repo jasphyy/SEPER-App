@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-        Software Practice Empirical Evidence Database (SEREP)
+        Software Practice Empirical Evidence Database (SEPER)
         </p>
         <a
           className="App-link"
