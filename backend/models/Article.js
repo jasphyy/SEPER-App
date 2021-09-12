@@ -4,11 +4,11 @@ const mongoose = require('mongoose');
 
 const ArticleSchema = new mongoose.Schema({
   id : {
-    type: Integer, 
+    type: Number, 
     required: true
   },
   
-    title: {
+  title: {
     type: String,
     required: true
   },
