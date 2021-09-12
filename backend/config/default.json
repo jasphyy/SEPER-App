@@ -1,0 +1,4 @@
+{
+    "mongoURI":
+      "mongodb+srv://CISE-Group2:iloveraymond@cise-ass1b.mkotm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+  }
