@@ -1,4 +1,5 @@
-const Article = require('../../models/Article');
+const express = require('express');
+const router = express.Router();
 
 // @route GET api/articles/test
 // @description tests articles route
