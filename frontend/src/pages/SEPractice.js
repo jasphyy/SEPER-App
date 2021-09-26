@@ -6,8 +6,9 @@ import Dropdown from "../components/Dropdown.js";
 
 const SEPractice = () => {
     return (
-      <div>
+      <div class="se-practice-container">
         <h2>Select SE Practice to get evidence for the claimed benefits</h2>
+        <hr></hr>
         <p>There will be a way to select an SE practice from our SEPER repository here</p>
         <p>Also the display table of evidence levels for different claims will show here for the SE practice selected</p>
         <Dropdown/>
