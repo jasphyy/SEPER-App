@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const filterArticles= (articles, query) => {
+const titleFilter= (articles, query) => {
     if (!query) {
         return articles;
     }
@@ -12,4 +12,4 @@ const filterArticles= (articles, query) => {
     });
 };
 
-export default filterArticles;
+export default titleFilter;

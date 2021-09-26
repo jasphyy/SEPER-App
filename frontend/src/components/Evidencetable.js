@@ -3,6 +3,7 @@ import articles from "../dummydata/articles.js";
 import { useTable, useSortBy, usePagination } from 'react-table';
 
 const Table = ({columns, data}) => {
+
 const {
     getTableProps,
     getTableBodyProps,
