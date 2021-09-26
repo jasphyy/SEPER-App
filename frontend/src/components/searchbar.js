@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Search = ({ searchQuery, setSearchQuery }) => (
+const SearchBar = ({ searchQuery, setSearchQuery }) => (
     <form action="/" method="get">
     <label htmlFor="header-search">
         <span className="visually-hidden">Search SE Practice</span>
@@ -18,4 +18,4 @@ const Search = ({ searchQuery, setSearchQuery }) => (
 
 );
 
-export default Search;
+export default SearchBar;
