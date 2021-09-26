@@ -2,10 +2,13 @@ import React from 'react';
 
 const SearchBar = ({ searchQuery, setSearchQuery }) => (
     <form action="/" method="get">
-    <label htmlFor="header-search">
+    <label htmlFor="header-search" class = "SELabel">
         <span className="visually-hidden">Search SE Practice</span>
     </label>
+    <hr></hr>
+    <div class = "searchbar-container">
     <input
+        class = "searchbar"
         value={searchQuery}
         onInput={e => setSearchQuery(e.target.value)}
         type="text"
@@ -13,8 +16,10 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => (
         placeholder="Search SE Practice"
         name="s" 
     />
-    <button type="submit">Search</button>
+    <button class = "search-button" type="submit">Search</button>
+    </div>
 </form>
+
 
 );
 

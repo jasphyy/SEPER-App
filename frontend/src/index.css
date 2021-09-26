@@ -25,7 +25,6 @@ body {
   padding-bottom: 2%;
 }
 
-
 .search-container{
   padding-left: 5%;
   padding-right: 5%;
@@ -49,6 +48,84 @@ body {
 
 }
 
+.search-table{
+ width: 100%;
+}
+
+th{
+  font-family: sans-serif;
+  border: solid;
+  
+}
+
+.article-title{
+  border: solid;
+  padding: 2%;
+}
+
+.article-authors{
+  border: solid;
+  padding: 1%;
+}
+
+.article-source{
+  border: solid;
+}
+
+.article-publication-year{
+  border: solid;
+}
+.article-doi{
+  border: solid;
+}
+
+
+
+.article-claim{
+  border: solid;
+}
+
+
+.article-evidence{
+  border: solid;
+}
+
+
+
+
+
+tr{
+  border: solid;
+}
+
+td{
+  font-family: sans-serif;
+  
+}
+
+.SELabel{
+  font-size: 25px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.searchbar{
+  font-family: sans-serif;
+  width: 88%;
+  font-size: 16px;
+  padding: 0.25%;
+}
+
+.search-button{
+  font-family: sans-serif;
+  padding: 0.25%;
+  margin-left: 1%;
+  width: 10%;
+}
+
+
+.searchbar-container{
+  padding: 1%;
+}
 
 h1, h2, p, ul, li {
   font-family: sans-serif;
@@ -88,13 +165,6 @@ ul.header li a {
   text-shadow: 1px 2px #41b3a3;
 }
 
-td{
-  font-family: sans-serif;
-}
-
-tr{
-  font-family: sans-serif;
-}
 
 .pagination{
   font-family: sans-serif;

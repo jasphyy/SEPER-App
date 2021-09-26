@@ -17,7 +17,7 @@ const Search = () =>
       searchQuery={searchQuery}
       setSearchQuery={setSearchQuery}
       />
-      <table>
+      <table class = "search-table">
         <tr>
           <th>Title</th>
           <th>Authors</th>
