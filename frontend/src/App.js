@@ -1,38 +1,36 @@
-import React from "react";
-import {
-  Route,
-  NavLink,
-  BrowserRouter as Router
-} from "react-router-dom";
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+
+//Title and Navbar Components
+import Title from "./components/title";
+import Navbar from "./components/navbar";
+
+//Page Windows
+import HomePage from "./pages/home-page";
+import SearchPage from "./pages/search-page";
+import SEPracticePage from "./pages/se-practice-page";
+import SubmitPage from "./pages/submit-page";
+
+//Custom CSS
+import "./App.css";
 
 
-import Home from "./pages/Home";
-import Search from "./pages/Search";
-import SEPractice from "./pages/SEPractice";
-import SubmitArticle from "./pages/SubmitArticle"; 
-
-
-const App = () =>  {
+class App extends Component {
+  render() {
     return (
-        <Router>
-        <div class = "main-container">
-          <h1 class = "title">Software Engineering Practice Evidence Repository (SEPER)</h1>
-            <ul className="header">
-                <li><NavLink exact to = "/">Home</NavLink></li>
-                <li><NavLink to = "/Search">Search</NavLink></li>
-                <li><NavLink to = "/SEPractice">Select the Practice</NavLink></li>
-                <li><NavLink to = "/SubmitArticle">Submit an Article</NavLink></li>
-
-            </ul>
-          <div className="content">
-            <Route exact path="/" component = {Home}/>
-            <Route  path="/Search" component = {Search}/>
-            <Route  path="/SEPractice" component={SEPractice}/>
-            <Route  path="/SubmitArticle" component={SubmitArticle}/>
-          </div>
-        </div>
-        </Router>
+      <Router>
+        
+          <Title />
+          <Navbar />
+          <Route exact path="/" component={HomePage} />
+          <Route path="/search" component={SearchPage} />
+          <Route path="/se-practice" component={SEPracticePage} />
+          <Route path="/submit-article" component={SubmitPage} />
+   
+      </Router>
     );
+  }
 }
- 
+
 export default App;
+
