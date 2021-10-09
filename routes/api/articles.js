@@ -1,55 +1,42 @@
-const Article = require('../../models/Article');
+const express = require("express");
+const router = express.Router();
+const Article = require("../../models/Article");
 
-// @route GET api/articles/test
-// @description tests articles route
-// @access Public
-router.get('/test', (req, res) => res.send('article route testing!'));
+router.get("/test", (req, res) => res.send("article route testing!"));
 
-// @route GET api/articles
-// @description Get all articles
-// @access Public
-router.get('/', (req, res) => {
-  Article.find()
-    .then(articles => res.json(articles))
-    .catch(err => res.status(404).json({ nobooksfound: 'No Articles found' }));
-});
-
-// @route GET api/articles/:id
-// @description Get single article by id
-// @access Public
-router.get('/:id', (req, res) => {
-  Article.findById(req.params.id)
-    .then(article => res.json(article))
-    .catch(err => res.status(404).json({ nobookfound: 'No Article found' }));
-});
-
-// @route GET api/articles
-// @description add/save article
-// @access Public
-router.post('/', (req, res) => {
-  Article.create(req.body)
-    .then(article => res.json({ msg: 'Article added successfully' }))
-    .catch(err => res.status(400).json({ error: 'Unable to add this article' }));
-});
-
-// @route GET api/articles/:id
-// @description Update article
-// @access Public
-router.put('/:id', (req, res) => {
-  Article.findByIdAndUpdate(req.params.id, req.body)
-    .then(article => res.json({ msg: 'Updated successfully' }))
-    .catch(err =>
-      res.status(400).json({ error: 'Unable to update the Database' })
+router.get("/", (req, res) => {
+  Article.find() // mongoose method gets lists of articles in mongoDB atlas database and returns in json format
+    .then((articles) => res.json(articles)) //returns articles in json format
+    .catch((err) =>
+      res.status(404).json({ noarticlesfound: "No Articles found" })
     );
 });
 
-// @route GET api/articles/:id
-// @description Delete article by id
-// @access Public
-router.delete('/:id', (req, res) => {
-  Article.findByIdAndRemove(req.params.id, req.body)
-    .then(article => res.json({ mgs: 'Article entry deleted successfully' }))
-    .catch(err => res.status(404).json({ error: 'No such a article' }));
+router.post("/add", (req, res) => {
+  const id = req.body.id;
+  const title = req.body.title;
+  const authors = req.body.authors;
+  const source = req.body.source;
+  const published_year = req.body.published_year;
+  const doi = req.body.doi;
+  const claim = "test1"
+  const evidence_level = "test2"
+
+  const newArticle = new Article({
+    id,
+    title,
+    authors,
+    source,
+    published_year,
+    doi,
+    claim,
+    evidence_level,
+  });
+
+  newArticle
+    .save()
+    .then(() => res.json("Article added!"))
+    .catch((err) => res.status(404).json("Error " + err));
 });
 
 module.exports = router;
