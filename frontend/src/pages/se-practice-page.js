@@ -1,29 +1,44 @@
-import articles from "../dummydata/articles.js";
-import Styles from "../components/tablestyle.js";
+
 import Table from "../components/evidencetable.js";
-import tablecolumns from "../components/tablecolumns.js";
-import Dropdown from "../components/Dropdown.js";
+import React, { Component } from "react";
+import axios from "axios";
+import Columns from "../components/column.js";
 
+class SEPracticePage extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      data: []
+    }
+  }
 
-const SEPracticePage = () => {
-
+  componentDidMount() {
+    axios
+      .get("http://localhost:3000/api/articles/")
+      .then((res) => {
+        this.setState({
+          data: res.data,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+ 
+  render() {
     return (
-  
-      <div class="se-practice-container">
-
-        <h2>Select SE Practice to get evidence for the claimed benefits</h2>
+      <div class="container pt-3 border border-dark border-top-0 rounded-bottom bg-light">
+        <h2>Select SE Practice</h2>
         <hr></hr>
-        <p>There will be a way to select an SE practice from our SEPER repository here</p>
-        <p>Also the display table of evidence levels for different claims will show here for the SE practice selected</p>
-        <Dropdown/>
-               <Styles>
+              
                  <Table
-                  data={articles}
-                  columns={tablecolumns}
+                  data = {this.state.data}
+                  columns={Columns}
                  />
-              </Styles>
+        
       </div>
     );
+  }
 }
- 
-export default SEPracticePage;  
+
+export default SEPracticePage;
