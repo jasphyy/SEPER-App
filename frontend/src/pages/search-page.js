@@ -4,7 +4,7 @@ import SearchBar from "../components/searchbar";
 import titleFilter from "../components/searchFilter/titleFilter";
 import { useState } from "react";
 
-const Search = () => 
+const SearchPage = () => 
 {
   const { search } = window.location;
   const query = new URLSearchParams(search).get('s');
@@ -67,4 +67,4 @@ const Search = () =>
   );
 }
 
-export default Search;
+export default SearchPage;

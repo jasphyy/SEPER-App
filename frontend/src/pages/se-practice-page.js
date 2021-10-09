@@ -5,7 +5,7 @@ import tablecolumns from "../components/tablecolumns.js";
 import Dropdown from "../components/Dropdown.js";
 
 
-const SEPractice = () => {
+const SEPracticePage = () => {
 
     return (
   
@@ -26,4 +26,4 @@ const SEPractice = () => {
     );
 }
  
-export default SEPractice;  
+export default SEPracticePage;  
