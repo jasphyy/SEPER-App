@@ -1,28 +1,38 @@
-// app.js
+const express = require("express"); // imports express
+const cors = require("cors");
+const connectDB = require("./config/db");
+const bodyparser = require("body-parser");
 
-const express = require('express');
-const connectDB = require('./config/db');
-var cors = require('cors');
+const articles = require("./routes/api/articles");
 
-// routes
-const articles = require('./routes/api/articles');
+require("dotenv").config();
 
-const app = express();
+const app = express(); // creates express app object
+const port = process.env.PORT || 3000;
 
-// Connect Database
 connectDB();
 
-// cors
 app.use(cors({ origin: true, credentials: true }));
+app.use(bodyparser.urlencoded({ extended: true }));
+app.use(bodyparser.json());
 
-// Init Middleware
-app.use(express.json({ extended: false }));
+//use Routes
+app.use("/api/articles", articles);
 
-app.get('/', (req, res) => res.send("Hello World!"));
+app.use(cors());
+app.use(express.json);
 
-// use Routes
-app.use('/api/articles', articles);
+const path = require("path");
 
-const port = process.env.PORT || 8082;
+
+
+if (process.env.NODE_ENV === 'production'){
+    app.use(express.static('frontend/build'));
+
+  
+}
+
+    
+
 
 app.listen(port, () => console.log(`Server running on port ${port}`));

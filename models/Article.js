@@ -1,48 +1,44 @@
-// models/Article.js
-
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const ArticleSchema = new mongoose.Schema({
   id: {
-      type: Number,
-      required: true
+    type: Number,
+    required: true,
   },
-  
-title: {
+
+  title: {
     type: String,
-    required: true
+    required: true,
   },
-  
+
   authors: {
     type: String,
-    required: true
+    required: true,
   },
 
   source: {
     type: String,
-    required: true
+    required: true,
   },
 
   published_year: {
-    type: Date,
-    required: true
+    type: String,
+    required: true,
   },
 
   doi: {
-    type: String
+    type: String,
   },
 
   claim: {
     type: String,
-    required: true
+    required: true,
   },
 
   evidence_level: {
-      type: String,
-      required: true
-  }
-
-
+    type: String,
+    required: true,
+  },
 });
-
-module.exports = Article = mongoose.model('article', ArticleSchema);
+const Article = mongoose.model("article", ArticleSchema);
+module.exports = Article;

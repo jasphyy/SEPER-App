@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-        Software Practice Empirical Evidence Database (SEPER)
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+//Title and Navbar 
+import Title from "./pages/title";
+import Navbar from "./pages/navbar";
+
+//Page Windows
+import HomePage from "./pages/home-page";
+import SEPracticePage from "./pages/se-practice-page";
+import SubmitPage from "./pages/submit-page";
+
+//Custom CSS
+import "./App.css";
+
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        
+          <Title />
+          <Navbar />
+          <Route exact path="/" component={HomePage} />
+          <Route path="/se-practice" component={SEPracticePage} />
+          <Route path="/submit-article" component={SubmitPage} />
+   
+      </Router>
+    );
+  }
+
 }
 
 export default App;
+

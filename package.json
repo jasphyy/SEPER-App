@@ -4,8 +4,11 @@
   "description": "backend",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "app": "nodemon app.js",
+    "build": "cd frontend && npm run build",
+    "install-frontend": "cd frontend && npm install",
+    "heroku-postbuild": "npm run build & npm run install-frontend",
+    "start": "nodemon app.js",
+    "frontend": "cd frontend && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
