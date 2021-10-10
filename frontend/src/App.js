@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
+
 //Title and Navbar 
 import Title from "./pages/title";
 import Navbar from "./pages/navbar";
@@ -27,6 +28,7 @@ class App extends Component {
       </Router>
     );
   }
+
 }
 
 export default App;

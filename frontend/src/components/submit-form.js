@@ -89,7 +89,7 @@ class SubmitForm extends Component {
     }
     console.log(article);
     
-    axios.post("http://localhost:3000/api/articles/add", article)
+    axios.post("https://seper-app-g2.herokuapp.com/api/articles/add", article)
     .then(res => console.log(res.article))
     .catch((err)  => {
       console.log("Error in submission!");
