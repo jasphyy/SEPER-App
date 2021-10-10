@@ -27,7 +27,7 @@ class SEPracticePage extends Component {
  
   render() {
     return (
-      <div class="container pt-3 border border-dark border-top-0 rounded-bottom bg-light">
+      <div class="table-responsive container pt-3 mb-3 border border-dark border-top-0 rounded-bottom bg-light">
         <h2>Select SE Practice</h2>
         <hr></hr>
               
