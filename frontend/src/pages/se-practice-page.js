@@ -14,7 +14,7 @@ class SEPracticePage extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:3000/api/articles/")
+      .get("https://seper-app-g2.herokuapp.com/api/articles/")
       .then((res) => {
         this.setState({
           data: res.data,
