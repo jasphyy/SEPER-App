@@ -1,19 +1,17 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 
-//Title and Navbar Components
-import Title from "./components/title";
-import Navbar from "./components/navbar";
+//Title and Navbar 
+import Title from "./pages/title";
+import Navbar from "./pages/navbar";
 
 //Page Windows
 import HomePage from "./pages/home-page";
-import SearchPage from "./pages/search-page";
 import SEPracticePage from "./pages/se-practice-page";
 import SubmitPage from "./pages/submit-page";
 
 //Custom CSS
 import "./App.css";
-
 
 class App extends Component {
   render() {
@@ -23,7 +21,6 @@ class App extends Component {
           <Title />
           <Navbar />
           <Route exact path="/" component={HomePage} />
-          <Route path="/search" component={SearchPage} />
           <Route path="/se-practice" component={SEPracticePage} />
           <Route path="/submit-article" component={SubmitPage} />
    

@@ -13,14 +13,14 @@ router.get("/", (req, res) => {
 });
 
 router.post("/add", (req, res) => {
-  const id = req.body.id;
+  const id = 0;
   const title = req.body.title;
   const authors = req.body.authors;
   const source = req.body.source;
   const published_year = req.body.published_year;
   const doi = req.body.doi;
-  const claim = "test1"
-  const evidence_level = "test2"
+  const claim = req.body.claim;
+  const evidence_level = req.body.evidence_level;
 
   const newArticle = new Article({
     id,

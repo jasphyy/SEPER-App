@@ -1,6 +1,7 @@
 import React, {useMemo} from "react";
-import articles from "../dummydata/articles.js";
-import { useTable, useSortBy, usePagination } from 'react-table';
+import { useTable, useSortBy, usePagination, useGlobalFilter} from 'react-table';
+import { GlobalFilter } from "./globalfilter";
+// import { DateFilter } from "./datefilter";
 
 const Table = ({columns, data}) => {
 
@@ -10,10 +11,7 @@ const {
     headerGroups,
     prepareRow,
     
-    page, // Instead of using 'rows', we'll use page,
-    // which has only the rows for the active page
-
-    // The rest of these things are super handy, too ;)
+    page,
     canPreviousPage,
     canNextPage,
     pageOptions,
@@ -23,22 +21,28 @@ const {
     previousPage,
     setPageSize,
     state: { pageIndex, pageSize },
+    state,
+    setGlobalFilter,
   } = useTable(
     {
       columns,
-      data,
+      data: data,
       initialState: { pageIndex: 0 },
-    },
+    }, useGlobalFilter,
     
     useSortBy,
     usePagination
   )
 
+  const { globalFilter } = state
+
   // Render Data Table UI
   return (
     <>
-      <table {...getTableProps()}>
-        <thead>
+    <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter}/>
+    {/* <DateFilter/> */}
+      <table class = "table table-bordered" {...getTableProps()}>
+        <thead class = "thead-light">
           {headerGroups.map(headerGroup => (
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map(column => (
@@ -74,7 +78,7 @@ const {
       </table>  
 
      {/* Pagination */}
-     <div className="pagination">
+     <div class = "container pb-2">
         <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
           {'<<'}
         </button>{' '}

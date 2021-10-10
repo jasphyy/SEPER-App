@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 class Navbar extends Component {
   render() {
     return (
-        <div class="container pt-4 pb-4 bg-light bg-gradient border border-dark">
+        <div class="container bg-light bg-gradient border border-dark">
         <nav class="navbar navbar-expand-xl navbar-light bg-light">
           <NavLink to="/" class="navbar-brand">
             SEPER
@@ -29,12 +29,9 @@ class Navbar extends Component {
                 </NavLink>
               </li>
               <li class="border-left border-dark pl-5 pr-3">
-                <NavLink to="/search">Search</NavLink>
-              </li>
-              <li class="border-left border-dark pl-5 pr-3">
                 <NavLink to="/se-practice">Select the Practice</NavLink>
               </li>
-              <li class="border-left border-dark pl-3">
+              <li class="border-left border-dark pl-5">
                 <NavLink to="/submit-article">Submit an Article</NavLink>
               </li>
             </ul>
