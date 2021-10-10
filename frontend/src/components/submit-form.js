@@ -143,7 +143,7 @@ class SubmitForm extends Component {
               </div>
 
               <div className="form-group">
-                <label for="articleYear">Publish Year</label>
+                <label for="articleYear" data-testid = "Publish Year">Publish Year</label>
                 <input
                   type="text"
                   placeholder="Year Published"
@@ -167,8 +167,8 @@ class SubmitForm extends Component {
                 />
               </div>
               <div className="form-group">
-                <label for ="articleClaim">Claim</label>
-                <select ref = "userInput"
+                <label for ="articleClaim" >Claim</label>
+                <select ref = "userInput" data-testid = "Claim"
                 required
                 className = "form-control"
                 value={this.state.claim}
@@ -179,8 +179,8 @@ class SubmitForm extends Component {
               </div>
 
               <div className="form-group">
-                <label for ="articleEvidenceLevel">EvidenceLevel</label>
-                <select ref = "userInput"
+                <label for ="articleEvidenceLevel" >Evidence Level</label>
+                <select ref = "userInput" data-testid = "Evidence Level"
                 required
                 className = "form-control"
                 value={this.state.evidence_level}
@@ -192,7 +192,7 @@ class SubmitForm extends Component {
                 </select>
               </div>
 
-              <input
+              <input data-testid = "Submit"
                 type="submit"
                 className="btn btn-outline-warning btn-block mt-4 pb-2"
               />
