@@ -25,5 +25,3 @@ jobs:
     - run: npm ci
     - name: Test the app
     - run: cd frontend
-
-    
