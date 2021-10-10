@@ -24,7 +24,6 @@ jobs:
         cache: 'npm'
     - run: npm ci
     - name: Test the app
-      run: |
         cd frontend
-        npm install react-scripts --save
-        npm test
+
+    
