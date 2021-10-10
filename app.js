@@ -15,7 +15,7 @@ connectDB();
 
 app.use(cors({ origin: true, credentials: true }));
 app.use(bodyparser.urlencoded({ extended: true }));
-app.use(bodyparser.json());
+app.use(bodyparser.json()); 
 
 //use Routes
 app.use("/api/articles", articles);
