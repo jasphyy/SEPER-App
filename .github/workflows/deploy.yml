@@ -26,8 +26,4 @@ jobs:
     - name: Test the app
       run: |
         cd frontend
-    npm test
-    
-
-
-      
+        npm test
