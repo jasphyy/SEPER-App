@@ -10,6 +10,7 @@ import Navbar from "./pages/navbar";
 import HomePage from "./pages/home-page";
 import SEPracticePage from "./pages/se-practice-page";
 import SubmitPage from "./pages/submit-page";
+import RegisterPage from "./pages/register-page";
 
 //Custom CSS
 import "./App.css";
@@ -18,13 +19,12 @@ class App extends Component {
   render() {
     return (
       <Router>
-        
           <Title />
           <Navbar />
           <Route exact path="/" component={HomePage} />
           <Route path="/se-practice" component={SEPracticePage} />
           <Route path="/submit-article" component={SubmitPage} />
-   
+          <Route path ="/register" component={RegisterPage} />
       </Router>
     );
   }
