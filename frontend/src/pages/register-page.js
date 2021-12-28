@@ -86,6 +86,7 @@ class RegisterPage extends Component {
 
                             <input data-testid="Submit"
                                 type="submit"
+                                value = "Reigster"
                                 className="btn btn-outline-warning btn-block mt-4 pb-2"
                             />
                         </form>
