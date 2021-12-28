@@ -34,6 +34,9 @@ class Navbar extends Component {
               <li class="border-left border-dark pl-5">
                 <NavLink to="/submit-article">Submit an Article</NavLink>
               </li>
+              <li class="border-left border-dark pl-5">
+                <NavLink to="/register">Register</NavLink>
+              </li>
             </ul>
           </div>
         </nav>
